@@ -14,6 +14,21 @@ _week:3 ,lesson page:19_
 _Setting Up the "Text Analyzer" Example Project,
 Test-Driven Development: Part 2_
 
+## Testing
+Describe: wordCounter()
+
+Test: "It should return 1 if a passage has just one word."
+Code:
+const text = "hello";
+wordCounter(text);
+Expected Output: 1
+
+Test: "It should return 2 if a passage has two words."
+Code:
+const text = "hello there";
+wordCounter(text);
+Expected Output: 2
+
 ## Set up/installation requirement
 * Code editor required (such as Visual Studio Code) and Github account.
 * Navigate this address https://github.com/keidsiri/Portfolio into your browser or 
