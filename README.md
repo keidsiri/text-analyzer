@@ -37,14 +37,14 @@ Expected Output: 2
 * Navigate to the top of disrectory
 * Connect to your Github repository
 * Open files in VS code to view or edit
-* Open file name _index.html_ in your browser to view this project.
+* Open file name "scripts.js" in your browser to view this project.
 
 
 ## Known bugs
 * _No known issues_
 
 ## License
-MIT License _(https://opensource.org/licenses/MIT)_
+<a href="(https://opensource.org/licenses/MIT)"> MIT License</a> _(https://opensource.org/licenses/MIT)_  
 
 Copyright (c) 2021 Kate Kiatsiri
 
