@@ -14,7 +14,7 @@ _week:3 ,lesson page:19_
 _Setting Up the "Text Analyzer" Example Project,
 Test-Driven Development: Part 2_
 
-## Testing
+## Testing 1:
 Describe: wordCounter()
 
 Test: "It should return 1 if a passage has just one word."
@@ -29,8 +29,8 @@ const text = "hello there";
 wordCounter(text);
 Expected Output: 2
 
-## Another testing
-Describe: numberOfOccurrencesInText()
+## Testing 2:
+### Describe: numberOfOccurrencesInText()
 
 Test: "It should return 0 occurrences of a word for an empty string."
 Code:
@@ -60,7 +60,7 @@ const word = "red";
 numberOfOccurrencesInText(word, text);
 Expected Output: 4
 
-Describe: numberOfOccurrencesInText()
+### Describe: numberOfOccurrencesInText()
 
 <-- this is our first test -->
 Test: "It should return 0 occurrences of a word for an empty string."
@@ -84,6 +84,37 @@ const text = "Red! Red. I like red, green, and yellow.";
 const word = "Red";
 numberOfOccurrencesInText(word, text);
 Expected Output: 3
+
+Test: "If an empty string is passed in as a word, it should return 0."
+Code:
+const word = "";
+const text = "red RED Red!";
+wordCounter(word, text);
+Expected Output: 0
+
+### Test 3:
+Describe: boldPassage()
+
+Test: "It should return a non-matching word in a p tag."
+Code:
+const word = "hello";
+const text = "yo";
+boldPassage(word, text);
+Expected Output: "<p>yo</p>"
+
+Test: "It should return a matching word in a b tag."
+Code:
+const word = "hello";
+const text = "hello";
+boldPassage(word, text);
+Expected Output: "<p><b>hello</b></p>"
+
+Test: "It should wrap words that match in `b` tags but not words that don't."
+Code:
+const word = "hello";
+const text = "hello there";
+boldPassage(word, text);
+Expected Output: "<p><b>hello</b> there</p>"
 
 ## Set up/installation requirement
 * Code editor required (such as Visual Studio Code) and Github account.
