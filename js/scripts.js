@@ -35,36 +35,57 @@ function numberOfOccurrencesInText(word, text) {
 }
 
 // Text Analyzer Update
-  // first : count word in the passage
-  function mostWord(string) {
-    let words = string.split(" ");
-    let freqArr = {};
-    word.forEach(function(word) {
-      if (!freqArr[word]) {
-        freqArr[word] = 0;
-      } else {
-        freqArr[word] += 1
-      }
-    });
-    return freqArr;
-  }
+  // Write a function that returns the three most used words
 
-  //offensive word
-  function ommitOffensiveWords(text){
-    if (text.trim().length === 0) {
-      return 0;
+function mostWord(string) {
+  let words = string.split(" ");
+  let freqArr = {};
+  word.forEach(function(word) {
+    if (!freqArr[word]) {
+      freqArr[word] = 0;
+    } else {
+      freqArr[word] += 1
     }
-    const wordArray = text.split(" ");
-    wordArray.forEach(function(element, index){
-      if(element === "zoinks" || element === "muppeteer" || element === "biffaroni" || element === "loopdaloop"){
-        wordArray[index] = "****";
+  });
+  return freqArr;
+}
+
+//offensive word
+
+function ommitOffensiveWords(text){
+  if (text.trim().length === 0) {
+    return 0;
+  }
+  const wordArray = text.split(" ");
+  wordArray.forEach(function(element, index){
+    if(element.toLowerCase() === "zoinks" || element.toLowerCase() === "muppeteer" || element.toLowerCase() === "biffaroni" || element.toLowerCase() === "loopdaloop"){
+      wordArray[index] = "****";
+    }
+  });
+  return wordArray.join(" ");
+}
+
+  //Write a UI function that only bolds the part of the word that matches
+
+  function partialBold (word, text) {
+    if (noInputtedWord(word, text)) {
+      return "";
+    }
+    const wordArray = word.split("");
+    const textArray = text.split("");
+    let newArray = new Array();
+
+    textArray.forEach(function(element, index) {
+      if (text.includes(word)) {
+
+      } else {
+        return //orginal passage
       }
     });
-    return wordArray.join(" ");
+
+
+
   }
-
-
-
 
 // UI Logic
 
@@ -102,7 +123,36 @@ $(document).ready(function(){
     
   
     // UI update:
-    $("#most-common").html(mostWord(passage));
+    // $("#most-common").html(mostWord(passage));
 
   });
 });
+
+
+// day 3. p.27
+// UI Logic
+
+// function noInputtedWord() {
+//   for (let i=0; i < arguments.length; i++) {
+//     if (arguments[i].trim().length === 0) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+// Business Logic
+
+// function wordCounter(text) {
+//   if (noInputtedWord(text)) {
+//     return 0;
+//   }
+//   let wordCount = 0;
+//   const wordArray = text.split(" ");
+//   wordArray.forEach(function(element) {
+//     if (!Number(element)) {
+//       wordCount++;
+//     }
+//   });
+//   return wordCount;
+// }
